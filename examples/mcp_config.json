@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "notes-logseq": {
+      "command": "/ABSOLUTE/PATH/TO/notes-logseq-mcp/venv/bin/python",
+      "args": [
+        "-m",
+        "src.server",
+        "/ABSOLUTE/PATH/TO/notes-logseq-mcp/config.json"
+      ],
+      "env": {
+        "PYTHONPATH": "/ABSOLUTE/PATH/TO/notes-logseq-mcp"
+      }
+    }
+  }
+}

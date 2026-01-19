@@ -1,0 +1,12 @@
+mcp>=1.0.0
+asyncio
+aiohttp
+pydantic
+python-dotenv
+ollama
+openai
+pathlib
+glob
+re
+json
+logging

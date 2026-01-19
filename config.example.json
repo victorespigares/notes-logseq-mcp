@@ -1,0 +1,19 @@
+{
+  "notes_path": "~/Notes",
+  "logseq_path": "~/Documents/Logseq",
+  "models": {
+    "default_provider": "local",
+    "ollama": {
+      "base_url": "http://localhost:11434",
+      "model": "llama3.1"
+    },
+    "remote": {
+      "api_key": "YOUR_API_KEY",
+      "model": "claude-3.5-sonnet",
+      "provider": "anthropic|openai|perplexity"
+    }
+  },
+  "logging": {
+    "level": "INFO"
+  }
+}
