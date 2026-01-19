@@ -1,6 +1,6 @@
-# Prompt Examples for Windsurf
+# Prompt Examples
 
-Once the MCP server is configured, you can use these prompts in Windsurf to interact with your notes and Logseq notes.
+Once the MCP server is configured, you can use these prompts in your MCP client (Windsurf, Claude Desktop, Cursor, etc.) to interact with your notes and Logseq notes.
 
 ## Basic Search
 

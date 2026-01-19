@@ -1,10 +1,14 @@
 # Notes-Logseq MCP Server
 
-MCP server to integrate markdown notes and Logseq with Windsurf IDE using AI.
+MCP server to integrate markdown notes and Logseq with AI assistants through the Model Context Protocol.
+
+Works with any MCP-compatible client including **Windsurf**, **Claude Desktop**, **Cursor**, and others.
 
 [![GitHub](https://img.shields.io/badge/GitHub-victorespigares%2Fnotes--logseq--mcp-blue?logo=github)](https://github.com/victorespigares/notes-logseq-mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+
+> **Note:** This project was co-authored with Claude AI.
 
 ## Features
 
@@ -69,7 +73,11 @@ venv/bin/python -m src.server config.json
 **Logseq path:**
 - Default: `~/Documents/Logseq` or `~/Logseq`
 
-### Windsurf Integration
+### MCP Client Integration
+
+This server works with any MCP-compatible client. Below are examples for popular clients:
+
+#### Windsurf
 
 Edit `~/Library/Application Support/Windsurf/mcp_config.json`:
 
@@ -91,10 +99,36 @@ Edit `~/Library/Application Support/Windsurf/mcp_config.json`:
 }
 ```
 
+#### Claude Desktop
+
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
+
+```json
+{
+  "mcpServers": {
+    "notes-logseq": {
+      "command": "/ABSOLUTE/PATH/TO/notes-logseq-mcp/venv/bin/python",
+      "args": [
+        "-m",
+        "src.server",
+        "/ABSOLUTE/PATH/TO/notes-logseq-mcp/config.json"
+      ],
+      "env": {
+        "PYTHONPATH": "/ABSOLUTE/PATH/TO/notes-logseq-mcp"
+      }
+    }
+  }
+}
+```
+
+#### Other MCP Clients
+
+For other MCP-compatible clients (Cursor, etc.), follow their specific MCP server configuration format using the same command structure.
+
 **Important:**
 - Use **absolute paths** (replace `/ABSOLUTE/PATH/TO/`)
 - Use **venv Python** (`venv/bin/python`), not system Python
-- Restart Windsurf after config changes
+- Restart your MCP client after config changes
 
 ## Available Tools
 
@@ -121,6 +155,8 @@ Edit `~/Library/Application Support/Windsurf/mcp_config.json`:
 | `extract_information` | Extract specific info with AI |
 
 ## Usage Examples
+
+These examples work with any MCP client (Windsurf, Claude Desktop, Cursor, etc.):
 
 ### Basic Search and Create
 ```
@@ -179,7 +215,7 @@ venv/bin/python -m pytest tests/ -v
 ## Documentation
 
 - [Smart Logseq Features Guide](SMART_LOGSEQ.md) - Detailed guide on intelligent Logseq integration
-- [Prompt Examples](examples/prompts.md) - Ready-to-use prompts for Windsurf
+- [Prompt Examples](examples/prompts.md) - Ready-to-use prompts for any MCP client
 
 ## Contributing
 
